@@ -25,10 +25,11 @@ function solution(n) {
     for(let i = 2; i <= n; i++) {
         if(count[i] === false) {
             //나누는 조건은 소수로만 확인하면 된다
+            //i가 2라면 2를 제외한 2의 배수 4, 6, 8 ... = true
             for(let j = i * i; j <= n; j += i) {
                 count[j] = true
             }
-            }            
-        }
+        }            
+    }
     return count.filter(v => v === false).length
 }
